@@ -1,0 +1,15 @@
+$yellow: rgb(250, 184, 20);
+$orange: rgb(255, 127, 0);
+$blue: rgb(90, 162, 245);
+
+$white: rgb(250, 250, 250);
+$darkblue: rgba(2, 32, 60, 0.9);
+
+:root {
+    --accent-color: #{$orange};
+    --topbar-width: 860px;
+}
+
+$accent: var(--accent-color);
+
+$mainPosition: 890px;
