@@ -163,11 +163,11 @@
 export default {
   name: 'overlay',
   props: ['title', 'description'],
-  created() {
-    // const root = document.documentElement;
-    // const imaginaryStrip = document.querySelector(".imaginary-strip");
-    // root.style.setProperty("--topbar-width", imaginaryStrip.offsetWidth + "px");
-    console.log(this.$el);
+  mounted() {
+    const root = document.documentElement;
+    const imaginaryStrip = document.querySelector('.imaginary-strip');
+    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
+    console.log(root);
   },
 };
 </script>
