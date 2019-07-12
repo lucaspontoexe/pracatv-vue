@@ -161,13 +161,13 @@
 
 <script>
 export default {
-  name: 'overlay',
-  props: ['title', 'description'],
+  name: "overlay",
+  props: ["title", "description"],
   mounted() {
     const root = document.documentElement;
-    const imaginaryStrip = document.querySelector('.imaginary-strip');
-    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
+    const imaginaryStrip = document.querySelector(".imaginary-strip");
+    root.style.setProperty("--topbar-width", `${imaginaryStrip.offsetWidth}px`);
     console.log(root);
-  },
+  }
 };
 </script>

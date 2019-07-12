@@ -9,7 +9,7 @@
 
 <style lang="scss">
 @import "./variables.scss";
-@import './fonts.scss';
+@import "./fonts.scss";
 
 .clock-widget {
   position: absolute;
@@ -43,7 +43,6 @@ span {
 </style>
 
 <script>
-
 function addZero(number) {
   return number < 10 ? `0${number}` : number;
 }
@@ -54,10 +53,10 @@ function getTime() {
 }
 
 export default {
-  name: 'clock-widget',
+  name: "clock-widget",
   data() {
     return {
-      time: '12:34',
+      time: "12:34"
     };
   },
 
@@ -65,7 +64,6 @@ export default {
     setInterval(() => {
       this.time = getTime();
     }, 1000);
-  },
+  }
 };
-
 </script>
