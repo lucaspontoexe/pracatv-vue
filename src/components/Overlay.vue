@@ -3,12 +3,12 @@
     <div class="imaginary-strip">
       <span>{{ title }}</span>
     </div>
-    <div class="top-strip leave">
+    <div class="top-strip" v-bind:class="[isRunning ? 'enter' : 'leave']">
       <span class="heading">{{ title }}</span>
     </div>
-    <div class="thing-for-animation leave"></div>
-    <div class="middle-strip leave"></div>
-    <div class="bottom-strip leave">
+    <div class="thing-for-animation" v-bind:class="[isRunning ? 'enter' : 'leave']"></div>
+    <div class="middle-strip" v-bind:class="[isRunning ? 'enter' : 'leave']"></div>
+    <div class="bottom-strip" v-bind:class="[isRunning ? 'enter' : 'leave']">
       <span class="description">{{ description }}</span>
     </div>
   </div>
@@ -161,13 +161,25 @@
 
 <script>
 export default {
-  name: "overlay",
-  props: ["title", "description"],
+  name: 'overlay',
+  data() {
+    return {
+      isRunning: false,
+      title: 'test title',
+      description: 'descrição',
+    };
+  },
+
   mounted() {
     const root = document.documentElement;
-    const imaginaryStrip = document.querySelector(".imaginary-strip");
-    root.style.setProperty("--topbar-width", `${imaginaryStrip.offsetWidth}px`);
+    const imaginaryStrip = document.querySelector('.imaginary-strip');
+    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
     console.log(root);
-  }
+  },
+  beforeUpdate() {
+    const root = document.documentElement;
+    const imaginaryStrip = document.querySelector('.imaginary-strip');
+    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
+  },
 };
 </script>

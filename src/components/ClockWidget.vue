@@ -53,10 +53,10 @@ function getTime() {
 }
 
 export default {
-  name: "clock-widget",
+  name: 'clock-widget',
   data() {
     return {
-      time: "12:34"
+      time: '12:34',
     };
   },
 
@@ -64,6 +64,6 @@ export default {
     setInterval(() => {
       this.time = getTime();
     }, 1000);
-  }
+  },
 };
 </script>
