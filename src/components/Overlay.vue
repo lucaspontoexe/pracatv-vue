@@ -1,15 +1,15 @@
 <template>
   <div class="overlay">
     <div class="imaginary-strip">
-      <span>{{ title }}</span>
+      <span>{{ something.title }}</span>
     </div>
-    <div class="top-strip" v-bind:class="[isRunning ? 'enter' : 'leave']">
-      <span class="heading">{{ title }}</span>
+    <div class="top-strip" v-bind:class="[something.isRunning ? 'enter' : 'leave']">
+      <span class="heading">{{ something.title }}</span>
     </div>
-    <div class="thing-for-animation" v-bind:class="[isRunning ? 'enter' : 'leave']"></div>
-    <div class="middle-strip" v-bind:class="[isRunning ? 'enter' : 'leave']"></div>
-    <div class="bottom-strip" v-bind:class="[isRunning ? 'enter' : 'leave']">
-      <span class="description">{{ description }}</span>
+    <div class="thing-for-animation" v-bind:class="[something.isRunning ? 'enter' : 'leave']"></div>
+    <div class="middle-strip" v-bind:class="[something.isRunning ? 'enter' : 'leave']"></div>
+    <div class="bottom-strip" v-bind:class="[something.isRunning ? 'enter' : 'leave']">
+      <span class="description">{{ something.description }}</span>
     </div>
   </div>
 </template>
@@ -162,13 +162,7 @@
 <script>
 export default {
   name: 'overlay',
-  data() {
-    return {
-      isRunning: false,
-      title: 'test title',
-      description: 'descrição',
-    };
-  },
+  props: ['something'],
 
   mounted() {
     const root = document.documentElement;
