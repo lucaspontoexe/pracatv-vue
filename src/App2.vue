@@ -30,5 +30,8 @@ export default {
       },
     };
   },
+  sockets: {
+    onmessage: message => console.log(JSON.parse(message.data)),
+  },
 };
 </script>
