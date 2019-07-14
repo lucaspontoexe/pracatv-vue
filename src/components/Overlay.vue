@@ -14,6 +14,27 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'overlay',
+  props: ['something'],
+
+  mounted() {
+    const root = document.documentElement;
+    const imaginaryStrip = document.querySelector('.imaginary-strip');
+    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
+    console.log(root);
+  },
+  updated() {
+    const root = document.documentElement;
+    const imaginaryStrip = document.querySelector('.imaginary-strip');
+    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
+  },
+
+};
+</script>
+
+
 <style lang="scss">
 @import "./variables.scss";
 @import "./fonts.scss";
@@ -158,22 +179,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  name: 'overlay',
-  props: ['something'],
-
-  mounted() {
-    const root = document.documentElement;
-    const imaginaryStrip = document.querySelector('.imaginary-strip');
-    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
-    console.log(root);
-  },
-  beforeUpdate() {
-    const root = document.documentElement;
-    const imaginaryStrip = document.querySelector('.imaginary-strip');
-    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
-  },
-};
-</script>

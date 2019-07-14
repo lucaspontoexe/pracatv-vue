@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <clock-widget />
-    <overlay :something="overlaytest" />
+    <overlay :something="overlaydata" />
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      overlaytest: {
+      overlaydata: {
         isRunning: false,
         title: 'test title',
         description: 'descrição',
