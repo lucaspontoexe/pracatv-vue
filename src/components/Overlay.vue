@@ -23,7 +23,6 @@ export default {
     const root = document.documentElement;
     const imaginaryStrip = document.querySelector('.imaginary-strip');
     root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
-    console.log(root);
   },
   updated() {
     const root = document.documentElement;
