@@ -5,9 +5,16 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import "./components/variables.scss";
+
 #app {
   height: 1080px;
+}
+
+:root {
+  --accent-color: #{$orange};
+  --topbar-width: 860px;
 }
 </style>
 
@@ -25,7 +32,7 @@ export default {
     return {
       overlaydata: {
         isRunning: false,
-        title: 'test title',
+        title: 'default title',
         description: 'descrição',
       },
     };
