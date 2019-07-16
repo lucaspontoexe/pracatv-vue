@@ -65,7 +65,6 @@ export default {
       switch (object.event) {
         case 'overlay':
           // this is SPARTA: https://michaelnthiessen.com/this-is-undefined
-          // lembrando que tem que ver o caso do isRunning
           Object.assign(this.$data.overlaydata, object.event_data);
           break;
 
