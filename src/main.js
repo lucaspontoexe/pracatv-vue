@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueNativeSock from 'vue-native-websocket';
 import store from './store';
-import App2 from './App2.vue';
+import App from './App.vue';
 
 Vue.config.productionTip = false;
 
@@ -16,5 +16,5 @@ Vue.use(VueNativeSock, 'ws://localhost:9999', vuesockOptions);
 
 new Vue({
   store,
-  render: h => h(App2),
+  render: h => h(App),
 }).$mount('#app');

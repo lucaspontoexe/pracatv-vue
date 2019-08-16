@@ -1,28 +1,82 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <clock-widget />
+    <overlay :something="overlaydata" />
   </div>
 </template>
 
+<style lang="scss">
+@import "./components/variables.scss";
+
+#app {
+  height: 1080px;
+}
+
+:root {
+  --accent-color: #{$orange};
+}
+</style>
+
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import ClockWidget from './components/ClockWidget.vue';
+import Overlay from './components/Overlay.vue';
+
+
+function setAccentColor(color) {
+  const colorList = {
+    yellow: 'rgb(250, 184, 20)',
+    orange: 'rgb(255, 127, 0)',
+    blue: 'rgb(90, 162, 245)',
+  };
+
+  let finalColor;
+
+  if (colorList[color] !== undefined) {
+    // hacky way to check for color in object without using iteration
+    finalColor = colorList[color];
+  } else {
+    finalColor = color;
+  }
+
+  const root = document.documentElement;
+  root.style.setProperty('--accent-color', finalColor);
+}
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    ClockWidget,
+    Overlay,
+  },
+  data() {
+    return {
+      overlaydata: {
+        isRunning: false,
+        title: 'default title',
+        description: 'descrição',
+      },
+    };
+  },
+  sockets: {
+    onmessage: function onmessage(message) {
+      const object = JSON.parse(message.data);
+
+      switch (object.event) {
+        case 'overlay':
+          // this is SPARTA: https://michaelnthiessen.com/this-is-undefined
+          Object.assign(this.$data.overlaydata, object.event_data);
+          break;
+
+        case 'color':
+          setAccentColor(object.event_data.accent_color);
+          break;
+
+        default:
+          // eslint-disable-next-line
+          console.log(object);
+          break;
+      }
+    },
   },
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

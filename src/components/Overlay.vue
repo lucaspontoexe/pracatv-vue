@@ -39,6 +39,10 @@ export default {
 @import "./fonts.scss";
 @import "./animations.scss";
 
+:root {
+    --topbar-width: 860px;
+}
+
 .overlay {
   position: absolute;
   top: $mainPosition;
