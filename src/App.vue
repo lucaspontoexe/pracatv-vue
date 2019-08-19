@@ -28,16 +28,8 @@ function setAccentColor(color) {
     orange: 'rgb(255, 127, 0)',
     blue: 'rgb(90, 162, 245)',
   };
-
-  let finalColor;
-
-  if (colorList[color] !== undefined) {
-    // hacky way to check for color in object without using iteration
-    finalColor = colorList[color];
-  } else {
-    finalColor = color;
-  }
-
+  
+  const finalColor = colorList[color] || color;
   const root = document.documentElement;
   root.style.setProperty('--accent-color', finalColor);
 }
