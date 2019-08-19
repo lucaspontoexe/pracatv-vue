@@ -1,4 +1,35 @@
-# vue-test-season-2
+# PraçaTV Clone
+
+era pra ter uma descrição bonita aqui, mas eu só vou mandar isso pro GitHub depois que isso estiver pronto
+
+## Demonstração de comandos do Websocket
+
+### Atualizar título e descrição
+
+```json
+{
+  "event": "overlay",
+  "event_data": {
+    "isRunning": true,
+    "title": "Crime ocorre, nada acontece",
+    "description": "Feijoada"
+  }
+}
+``` 
+
+### Alterar cores
+
+```json
+{
+  "event": "color",
+  "event_data": {
+    "accent_color": "blue"
+  }
+}
+```
+
+
+
 
 ## Project setup
 ```
