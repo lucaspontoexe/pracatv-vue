@@ -10,6 +10,7 @@
 
 #app {
   height: 1080px;
+  background-color: green;
 }
 
 :root {
