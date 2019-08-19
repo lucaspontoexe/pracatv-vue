@@ -28,7 +28,7 @@ function setAccentColor(color) {
     orange: 'rgb(255, 127, 0)',
     blue: 'rgb(90, 162, 245)',
   };
-  
+
   const finalColor = colorList[color] || color;
   const root = document.documentElement;
   root.style.setProperty('--accent-color', finalColor);
