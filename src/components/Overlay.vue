@@ -19,15 +19,10 @@ export default {
   name: 'overlay',
   props: ['something'],
 
-  mounted() {
-    const root = document.documentElement;
-    const imaginaryStrip = document.querySelector('.imaginary-strip');
-    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
-  },
   updated() {
-    const root = document.documentElement;
+    const element = document.querySelector('.overlay');
     const imaginaryStrip = document.querySelector('.imaginary-strip');
-    root.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
+    element.style.setProperty('--topbar-width', `${imaginaryStrip.offsetWidth}px`);
   },
 
 };
@@ -39,11 +34,8 @@ export default {
 @import "./fonts.scss";
 @import "./animations.scss";
 
-:root {
-    --topbar-width: 860px;
-}
-
 .overlay {
+  --topbar-width: 860px;
   position: absolute;
   top: $mainPosition;
   left: 340px;
