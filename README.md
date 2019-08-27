@@ -1,8 +1,21 @@
 # PraçaTV Clone
 
-era pra ter uma descrição bonita aqui, mas eu só vou mandar isso pro GitHub depois que isso estiver pronto
+Um clone[cópia] do gerador de caracteres (GC) utilizado nos telejornais regionais, implementado com Vue.
+
+![o clone em si](doc.png)
+
+## Instalação
+
+- `yarn` ou `npm install`
+- git submodule init (ou algo assim)
+
+## como faz pra rodar
+- roda el socketito [puxão de orelha: vai ser automático]
+- abre o `index.html` ou vai de ~~retro~~ `yarn serve` (ou `npm run serve`)
+
 
 ## Demonstração de comandos do Websocket
+__ é controlado por meio de uma conexão WebSocket
 
 ### Atualizar título e descrição
 
@@ -27,8 +40,6 @@ era pra ter uma descrição bonita aqui, mas eu só vou mandar isso pro GitHub d
   }
 }
 ```
-
-
 
 
 ## Project setup
