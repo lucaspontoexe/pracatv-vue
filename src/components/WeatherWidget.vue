@@ -61,7 +61,7 @@ $opaqueblue: rgb(2, 32, 60);
 
     .text {
       color: $white;
-      font-family: "Futura Light";
+      font-family: "Futura Light", "Century Gothic", Arial, Helvetica, sans-serif;;
       font-size: 54px;
     }
   }
