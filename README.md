@@ -4,6 +4,8 @@ Um clone[cópia] do gerador de caracteres (GC) utilizado nos telejornais regiona
 
 ![o clone em si](doc.png)
 
+see also: praça tv vanilla JS
+
 ## Instalação
 
 - `yarn` ou `npm install`
