@@ -1,12 +1,12 @@
 <template>
   <div class="weather-widget">
-    <div class="top">
+    <div class="top" v-bind:class="{animated: visible}">
       <div class="icon"></div>
       <div class="temperature">
-        <span class="text">22°</span>
+        <span class="text" v-bind:class="{animated: visible}">22°</span>
       </div>
     </div>
-    <div class="bottom">
+    <div class="bottom" v-bind:class="{animated: visible}">
       <span>Qualquer cidade</span>
     </div>
   </div>
@@ -15,6 +15,25 @@
 <script>
 export default {
   name: 'weather-widget',
+  props: {
+    index: {
+      type: Number,
+      default: 1,
+    },
+    temperature: Number,
+    city: String,
+  },
+  data() {
+    return {
+      visible: false,
+    };
+  },
+  mounted() {
+    // tem que criar a classe 'leave' se for pra controlar o tempo da animação
+    window.setTimeout(() => {
+      this.visible = true;
+    }, 1000 * this.index);
+  },
 };
 </script>
 
@@ -64,8 +83,11 @@ $opaqueblue: rgb(2, 32, 60);
   position: relative;
   height: 70px;
   clip-path: inset(0% 100% 0% 0%);
-  animation: fill-to-right 0.6s ease-in-out 0s forwards,
-    unfill-from-right 0.4s ease-in-out 5s forwards;
+
+  &.animated {
+    animation: fill-to-right 0.6s ease-in-out 0s forwards,
+      unfill-from-right 0.4s ease-in-out 5s forwards;
+  }
 
   .icon {
     position: absolute;
@@ -97,7 +119,9 @@ $opaqueblue: rgb(2, 32, 60);
   // TODO: change .icon to the actual icon (img tag)
   .icon,
   .text {
-    animation: slide-in 0.8s forwards;
+    &.animated {
+      animation: slide-in 0.8s forwards;
+    }
   }
 }
 
@@ -112,8 +136,10 @@ $opaqueblue: rgb(2, 32, 60);
   align-items: center;
 
   clip-path: inset(0% 100% 0% 0%);
-  animation: fill-to-right 0.6s ease-in-out 0.2s forwards,
-    unfill-from-right 0.4s ease-in-out 5.2s forwards;
+  &.animated {
+    animation: fill-to-right 0.6s ease-in-out 0.2s forwards,
+      unfill-from-right 0.4s ease-in-out 5.2s forwards;
+  }
 
   span {
     position: absolute;
@@ -121,8 +147,10 @@ $opaqueblue: rgb(2, 32, 60);
     color: $white;
     font-family: "Futura Light", "Century Gothic", Arial, Helvetica, sans-serif;
 
-    animation: slide-in 0.8s forwards;
-    animation-delay: 0.2s;
+    &.animated {
+      animation: slide-in 0.8s forwards;
+      animation-delay: 0.2s;
+    }
   }
 }
 </style>
