@@ -104,6 +104,7 @@ $opaqueblue: rgb(2, 32, 60);
     display: flex;
     justify-content: center;
     align-items: center;
+
     img {
       height: 100%;
     }
@@ -149,6 +150,7 @@ $opaqueblue: rgb(2, 32, 60);
   align-items: center;
 
   clip-path: inset(0% 100% 0% 0%);
+
   &.animated {
     animation: fill-to-right 0.6s ease-in-out 0.2s forwards,
       unfill-from-right 0.4s ease-in-out 5.2s forwards;
