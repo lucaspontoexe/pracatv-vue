@@ -32,6 +32,16 @@ $opaqueblue: rgb(2, 32, 60);
   }
 }
 
+@keyframes unfill-from-right {
+  // try to reverse the original
+  0% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+}
+
 .weather-widget {
   position: absolute;
   left: 102px;
@@ -44,7 +54,9 @@ $opaqueblue: rgb(2, 32, 60);
 .top {
   position: relative;
   height: 70px;
-  animation: fill-to-right 0.6s ease-in-out both;
+  clip-path: inset(0% 100% 0% 0%);
+  animation: fill-to-right 0.6s ease-in-out 0s forwards,
+    unfill-from-right 0.4s ease-in-out 5s forwards;
 
   .icon {
     position: absolute;
@@ -82,7 +94,9 @@ $opaqueblue: rgb(2, 32, 60);
   text-align: center;
   margin: 0px;
 
-  animation: fill-to-right 0.6s ease-in-out 0.2s both;
+  clip-path: inset(0% 100% 0% 0%);
+  animation: fill-to-right 0.6s ease-in-out 0.2s forwards,
+    unfill-from-right 0.4s ease-in-out 5.2s forwards;
 
   span {
     line-height: 45px;
