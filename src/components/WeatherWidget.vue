@@ -1,7 +1,13 @@
 <template>
   <div class="weather-widget">
     <div class="top" v-bind:class="{animated: visible}">
-      <div class="icon"></div>
+      <div class="icon">
+        <img
+          src="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/04d.png"
+          alt="clouds"
+          v-bind:class="{animated: visible}"
+        />
+      </div>
       <div class="temperature">
         <span class="text" v-bind:class="{animated: visible}">{{ temperature }}°</span>
       </div>
@@ -94,6 +100,13 @@ $opaqueblue: rgb(2, 32, 60);
     width: 50%;
     height: 100%;
     background-color: darken($color: $opaqueblue, $amount: 5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 100%;
+    }
   }
 
   .temperature {
@@ -117,7 +130,7 @@ $opaqueblue: rgb(2, 32, 60);
     }
   }
   // TODO: change .icon to the actual icon (img tag)
-  .icon,
+  .icon > img,
   .text {
     &.animated {
       animation: slide-in 0.8s forwards;
