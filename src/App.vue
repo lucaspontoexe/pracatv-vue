@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <clock-widget />
-    <weather-widget/>
+    <weather-widget :index='1' city="Qualquer cidade" :temperature="20"/>
+    <weather-widget :index='2' city="Tangamandápio" :temperature="30"/>
+    <weather-widget :index='3' city="Acapulco" :temperature="15"/>
     <overlay :something="overlaydata" />
   </div>
 </template>

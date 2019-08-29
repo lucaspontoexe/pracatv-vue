@@ -3,11 +3,11 @@
     <div class="top" v-bind:class="{animated: visible}">
       <div class="icon"></div>
       <div class="temperature">
-        <span class="text" v-bind:class="{animated: visible}">22°</span>
+        <span class="text" v-bind:class="{animated: visible}">{{ temperature }}°</span>
       </div>
     </div>
     <div class="bottom" v-bind:class="{animated: visible}">
-      <span>Qualquer cidade</span>
+      <span>{{ city }}</span>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
     // tem que criar a classe 'leave' se for pra controlar o tempo da animação
     window.setTimeout(() => {
       this.visible = true;
-    }, 1000 * this.index);
+    }, 3000 * this.index);
   },
 };
 </script>
