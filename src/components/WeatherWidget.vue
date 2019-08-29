@@ -1,9 +1,7 @@
 <template>
   <div class="weather-widget">
     <div class="top">
-      <div class="icon">
-
-      </div>
+      <div class="icon"></div>
       <div class="temperature">
         <span class="text">22°</span>
       </div>
@@ -25,6 +23,15 @@ export default {
 @import "./fonts.scss";
 $opaqueblue: rgb(2, 32, 60);
 
+@keyframes fill-to-right {
+  0% {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
 .weather-widget {
   position: absolute;
   left: 102px;
@@ -37,7 +44,7 @@ $opaqueblue: rgb(2, 32, 60);
 .top {
   position: relative;
   height: 70px;
-  // clip-path: inset(0% 50% 0% 0%);
+  animation: fill-to-right 0.6s ease-in-out both;
 
   .icon {
     position: absolute;
@@ -61,7 +68,8 @@ $opaqueblue: rgb(2, 32, 60);
 
     .text {
       color: $white;
-      font-family: "Futura Light", "Century Gothic", Arial, Helvetica, sans-serif;;
+      font-family: "Futura Light", "Century Gothic", Arial, Helvetica,
+        sans-serif;
       font-size: 54px;
     }
   }
@@ -73,6 +81,8 @@ $opaqueblue: rgb(2, 32, 60);
   background-color: lighten($color: $opaqueblue, $amount: 8);
   text-align: center;
   margin: 0px;
+
+  animation: fill-to-right 0.6s ease-in-out 0.2s both;
 
   span {
     line-height: 45px;
