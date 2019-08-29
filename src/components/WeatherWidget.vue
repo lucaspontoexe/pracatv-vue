@@ -42,13 +42,22 @@ $opaqueblue: rgb(2, 32, 60);
   }
 }
 
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translate(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+
 .weather-widget {
   position: absolute;
   left: 102px;
   top: $mainPosition;
   width: 232px;
-
-  // background-color: $opaqueblue;
 }
 
 .top {
@@ -85,23 +94,35 @@ $opaqueblue: rgb(2, 32, 60);
       font-size: 54px;
     }
   }
+  // TODO: change .icon to the actual icon (img tag)
+  .icon,
+  .text {
+    animation: slide-in 0.8s forwards;
+  }
 }
 
 .bottom {
   position: relative;
   height: 45px;
   background-color: lighten($color: $opaqueblue, $amount: 8);
-  text-align: center;
   margin: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   clip-path: inset(0% 100% 0% 0%);
   animation: fill-to-right 0.6s ease-in-out 0.2s forwards,
     unfill-from-right 0.4s ease-in-out 5.2s forwards;
 
   span {
+    position: absolute;
     line-height: 45px;
     color: $white;
     font-family: "Futura Light", "Century Gothic", Arial, Helvetica, sans-serif;
+
+    animation: slide-in 0.8s forwards;
+    animation-delay: 0.2s;
   }
 }
 </style>
