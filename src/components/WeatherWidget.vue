@@ -38,7 +38,7 @@ export default {
     // tem que criar a classe 'leave' se for pra controlar o tempo da animação
     window.setTimeout(() => {
       this.visible = true;
-    }, 3000 * this.index);
+    }, 5000 * this.index);
   },
 };
 </script>
@@ -47,6 +47,7 @@ export default {
 @import "./variables.scss";
 @import "./fonts.scss";
 $opaqueblue: rgb(2, 32, 60);
+$screenTime: 5s;
 
 @keyframes fill-to-right {
   0% {
@@ -92,7 +93,7 @@ $opaqueblue: rgb(2, 32, 60);
 
   &.animated {
     animation: fill-to-right 0.6s ease-in-out 0s forwards,
-      unfill-from-right 0.4s ease-in-out 4s forwards;
+      unfill-from-right 0.4s ease-in-out ($screenTime + 1s) forwards;
   }
 
   .icon {
@@ -153,7 +154,7 @@ $opaqueblue: rgb(2, 32, 60);
 
   &.animated {
     animation: fill-to-right 0.6s ease-in-out 0.2s forwards,
-      unfill-from-right 0.4s ease-in-out 4.2s forwards;
+      unfill-from-right 0.4s ease-in-out ($screenTime + 1.2s) forwards;
   }
 
   span {
