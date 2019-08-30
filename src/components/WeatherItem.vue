@@ -93,7 +93,7 @@ $screenTime: 5s;
 
   &.animated {
     animation: fill-to-right 0.6s ease-in-out 0s forwards,
-      unfill-from-right 0.4s ease-in-out ($screenTime + 1s) forwards;
+      unfill-from-right 0.4s ease-in-out ($screenTime + 1.2s) forwards;
   }
 
   .icon {
@@ -154,7 +154,7 @@ $screenTime: 5s;
 
   &.animated {
     animation: fill-to-right 0.6s ease-in-out 0.2s forwards,
-      unfill-from-right 0.4s ease-in-out ($screenTime + 1.2s) forwards;
+      unfill-from-right 0.4s ease-in-out ($screenTime + 1s) forwards;
   }
 
   span {
