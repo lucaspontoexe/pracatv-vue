@@ -3,7 +3,7 @@
     <div class="top" v-bind:class="{animated: visible}">
       <div class="icon">
         <img
-          src="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/04d.png"
+          :src="`https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${ icon }.png`"
           alt="clouds"
           v-bind:class="{animated: visible}"
         />
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="bottom" v-bind:class="{animated: visible}">
-      <span v-bind:class="{animated: visible}"> {{ name }}</span>
+      <span v-bind:class="{animated: visible}"> {{ name }} </span>
     </div>
   </div>
 </template>
@@ -28,6 +28,7 @@ export default {
     },
     temperature: Number,
     name: String,
+    icon: String,
   },
   data() {
     return {

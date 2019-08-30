@@ -21,14 +21,17 @@ export default {
         {
           name: 'Qualquer Cidade',
           temperature: 20,
+          icon: '01d',
         },
         {
           name: 'Tangamandápio',
           temperature: 30,
+          icon: '02d',
         },
         {
           name: 'Acapulco',
           temperature: 15,
+          icon: '04d',
         },
       ],
     };
