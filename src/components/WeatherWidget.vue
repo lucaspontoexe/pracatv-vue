@@ -92,7 +92,7 @@ $opaqueblue: rgb(2, 32, 60);
 
   &.animated {
     animation: fill-to-right 0.6s ease-in-out 0s forwards,
-      unfill-from-right 0.4s ease-in-out 5s forwards;
+      unfill-from-right 0.4s ease-in-out 4s forwards;
   }
 
   .icon {
@@ -153,7 +153,7 @@ $opaqueblue: rgb(2, 32, 60);
 
   &.animated {
     animation: fill-to-right 0.6s ease-in-out 0.2s forwards,
-      unfill-from-right 0.4s ease-in-out 5.2s forwards;
+      unfill-from-right 0.4s ease-in-out 4.2s forwards;
   }
 
   span {
