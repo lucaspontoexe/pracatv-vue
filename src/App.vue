@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <clock-widget />
-    <weather-widget :index='1' city="Qualquer cidade" :temperature="20"/>
-    <weather-widget :index='2' city="Tangamandápio" :temperature="30"/>
-    <weather-widget :index='3' city="Acapulco" :temperature="15"/>
+    <weather-item :index='1' city="Qualquer cidade" :temperature="20"/>
+    <weather-item :index='2' city="Tangamandápio" :temperature="30"/>
+    <weather-item :index='3' city="Acapulco" :temperature="15"/>
     <overlay :something="overlaydata" />
   </div>
 </template>
@@ -24,7 +24,7 @@
 <script>
 import ClockWidget from './components/ClockWidget.vue';
 import Overlay from './components/Overlay.vue';
-import WeatherWidget from './components/WeatherWidget.vue';
+import WeatherItem from './components/WeatherItem.vue';
 
 function setAccentColor(color) {
   const colorList = {
@@ -43,7 +43,7 @@ export default {
   components: {
     ClockWidget,
     Overlay,
-    WeatherWidget,
+    WeatherItem,
   },
   data() {
     return {
