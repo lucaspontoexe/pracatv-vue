@@ -36,10 +36,16 @@ export default {
     };
   },
   mounted() {
-    // tem que criar a classe 'leave' se for pra controlar o tempo da animação
-    window.setTimeout(() => {
-      this.visible = true;
-    }, 5000 * this.index);
+    this.setupAnimation();
+  },
+  methods: {
+    setupAnimation() {
+      // tem que criar a classe 'leave' se for pra controlar o tempo da animação
+      this.visible = false;
+      window.setTimeout(() => {
+        this.visible = true;
+      }, 5000 * this.index);
+    },
   },
 };
 </script>

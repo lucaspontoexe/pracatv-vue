@@ -25,5 +25,10 @@ export default {
       cities: store.state.cities,
     };
   },
+  methods: {
+    reset() {
+      this.$children.forEach(child => child.setupAnimation());
+    },
+  },
 };
 </script>
