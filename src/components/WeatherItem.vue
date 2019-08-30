@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="bottom" v-bind:class="{animated: visible}">
-      <span v-bind:class="{animated: visible}"> {{ city }}</span>
+      <span v-bind:class="{animated: visible}"> {{ name }}</span>
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
       default: 1,
     },
     temperature: Number,
-    city: String,
+    name: String,
   },
   data() {
     return {
