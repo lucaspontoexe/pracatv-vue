@@ -1,5 +1,5 @@
 <template>
-  <div class="weather-widget">
+  <div class="weather-item">
     <div class="top" v-bind:class="{animated: visible}">
       <div class="icon">
         <img
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'weather-widget',
+  name: 'weather-item',
   props: {
     index: {
       type: Number,
@@ -79,7 +79,7 @@ $screenTime: 5s;
   }
 }
 
-.weather-widget {
+.weather-item {
   position: absolute;
   left: 102px;
   top: $mainPosition;
