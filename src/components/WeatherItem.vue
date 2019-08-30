@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="bottom" v-bind:class="{animated: visible}">
-      <span v-bind:class="{animated: visible}"> {{ name }} </span>
+      <span v-bind:class="{animated: visible}">{{ name }}</span>
     </div>
   </div>
 </template>

@@ -10,30 +10,19 @@
 </template>
 
 <script>
+import store from '../store';
 import WeatherItem from './WeatherItem.vue';
 
 export default {
   name: 'weather-widget',
   components: { WeatherItem },
+  mounted() {
+    store.commit('change', 'eh fogo né');
+    console.log(store.state.test);
+  },
   data() {
     return {
-      cities: [
-        {
-          name: 'Qualquer Cidade',
-          temperature: 20,
-          icon: '01d',
-        },
-        {
-          name: 'Tangamandápio',
-          temperature: 30,
-          icon: '02d',
-        },
-        {
-          name: 'Acapulco',
-          temperature: 15,
-          icon: '04d',
-        },
-      ],
+      cities: store.state.cities,
     };
   },
 };
