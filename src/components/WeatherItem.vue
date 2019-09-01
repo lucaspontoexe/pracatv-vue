@@ -1,19 +1,19 @@
 <template>
   <div class="weather-item">
-    <div class="top" v-bind:class="{animated: visible}">
+    <div class="top" v-bind:class="{animated: runningAnimation}">
       <div class="icon">
         <img
           :src="`https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${ icon }.png`"
           alt="clouds"
-          v-bind:class="{animated: visible}"
+          v-bind:class="{animated: runningAnimation}"
         />
       </div>
       <div class="temperature">
-        <span class="text" v-bind:class="{animated: visible}">{{ temperature }}°</span>
+        <span class="text" v-bind:class="{animated: runningAnimation}">{{ temperature }}°</span>
       </div>
     </div>
-    <div class="bottom" v-bind:class="{animated: visible}">
-      <span v-bind:class="{animated: visible}">{{ name }}</span>
+    <div class="bottom" v-bind:class="{animated: runningAnimation}">
+      <span v-bind:class="{animated: runningAnimation}">{{ name }}</span>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-      visible: false,
+      runningAnimation: false,
     };
   },
   mounted() {
@@ -40,11 +40,16 @@ export default {
   },
   methods: {
     setupAnimation() {
-      // tem que criar a classe 'leave' se for pra controlar o tempo da animação
-      this.visible = false;
+      // gambiarra: CSS não oferece um jeito de reiniciar uma animação.
+      // a Web Animations API não tá resolvendo
+      this.runningAnimation = false;
       window.setTimeout(() => {
-        this.visible = true;
+        this.runningAnimation = true;
       }, 5000 * this.index);
+    },
+
+    onAnimationEnd(event) {
+      console.log('done animating', event.animationName);
     },
   },
 };
