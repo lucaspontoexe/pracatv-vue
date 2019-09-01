@@ -1,6 +1,9 @@
 <template>
   <div class="weather-item">
-    <div class="top" v-bind:class="{animated: runningAnimation}">
+    <div class="top" 
+      v-bind:class="{animated: runningAnimation}"
+      v-on:animationend="onAnimationEnd($event)"
+      >
       <div class="icon">
         <img
           :src="`https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${ icon }.png`"
@@ -49,7 +52,7 @@ export default {
     },
 
     onAnimationEnd(event) {
-      console.log('done animating', event.animationName);
+      console.log('done animating', event);
     },
   },
 };
