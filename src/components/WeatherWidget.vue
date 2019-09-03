@@ -30,8 +30,6 @@ export default {
   },
   methods: {
     async reset() {
-      console.log('resettin\'');
-
       await sleep(5000);
       this.$children.forEach(child => child.setupAnimation());
     },
