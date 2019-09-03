@@ -11,9 +11,9 @@ see also: praça tv vanilla JS
 - `yarn` ou `npm install`
 - git submodule init (ou algo assim)
 
-## como faz pra rodar
-- roda el socketito [puxão de orelha: vai ser automático]
-- abre o `index.html` ou vai de ~~retro~~ `yarn serve` (ou `npm run serve`)
+## Uso
+- Tenha um servidor de WebSocket aberto na porta 9999 [(ou baixe esta extensão)](https://chrome.google.com/webstore/detail/websocket-server-test/pkbpddppnkjmlbgliipgmhjeialadokj)
+- Inicie com `yarn serve` ou `npm run serve`
 
 
 ## Demonstração de comandos do Websocket
