@@ -23,6 +23,7 @@
 
 <script>
 import sleep from '../timeout';
+import store from '../store';
 
 export default {
   name: 'weather-item',
@@ -40,15 +41,12 @@ export default {
       runningAnimation: false,
     };
   },
-  mounted() {
-    // this.setupAnimation();
-  },
   methods: {
     async setupAnimation() {
       if (this.index === 0) console.log('WeatherAnimationsBegan');
 
       // gambiarra: CSS não oferece um jeito de reiniciar uma animação.
-      // a Web Animations API não tá resolvendo
+      // a Web Animations API não tá ajudando
       this.runningAnimation = false;
       await sleep(5000 * this.index);
       this.runningAnimation = true;
@@ -57,9 +55,9 @@ export default {
     onAnimationEnd(event) {
       // unfill-from-right é a última animação do item
       if (event.animationName === 'unfill-from-right') {
-        console.log('done animating', event);
-        // alt: store.cities.length
-        if (this.$parent.cities.length === this.index) this.$parent.$emit('weatherAnimationsEnded');
+        // Caso esse seja o último item da lista, reinicia a animação.
+        // Permanece desse jeito até eu entender como os eventos em Vue funcionam.
+        if ((store.state.cities.length - 1) === this.index) this.$parent.reset();
       }
     },
   },
