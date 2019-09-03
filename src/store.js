@@ -22,6 +22,21 @@ export default new Vuex.Store({
         temperature: 15,
         icon: '04d',
       },
+      {
+        name: 'Quatrópolis',
+        temperature: 14,
+        icon: '03d',
+      },
+      {
+        name: 'Piracicaba',
+        temperature: 15,
+        icon: '02d',
+      },
+      {
+        name: 'Sexta',
+        temperature: 21,
+        icon: '04d',
+      },
     ],
   },
   mutations: {
