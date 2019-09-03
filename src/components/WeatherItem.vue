@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     async setupAnimation() {
-      if (this.index === 0) console.log('WeatherAnimationsBegan');
+      if (this.index === 0) this.$emit('WeatherAnimationsBegan');
 
       // gambiarra: CSS não oferece um jeito de reiniciar uma animação.
       // a Web Animations API não tá ajudando
@@ -56,8 +56,7 @@ export default {
       // unfill-from-right é a última animação do item
       if (event.animationName === 'unfill-from-right') {
         // Caso esse seja o último item da lista, reinicia a animação.
-        // Permanece desse jeito até eu entender como os eventos em Vue funcionam.
-        if ((store.state.cities.length - 1) === this.index) this.$parent.reset();
+        if ((store.state.cities.length - 1) === this.index) this.$emit('weatherAnimationsEnded');
       }
     },
   },

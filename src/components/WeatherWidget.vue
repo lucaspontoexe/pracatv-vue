@@ -2,7 +2,7 @@
   <div class="weather-widget">
       <weather-item
         v-for="(item, index) in this.cities"
-        v-on:weatherAnimationsEnded="reset"
+        @weatherAnimationsEnded="reset"
         v-bind:key="index"
         v-bind="item"
         :index="index"
@@ -18,15 +18,15 @@ import WeatherItem from './WeatherItem.vue';
 export default {
   name: 'weather-widget',
   components: { WeatherItem },
-  mounted() {
-    store.commit('change', 'eh fogo né');
-    console.log(store.state.test);
-    this.reset();
-  },
   data() {
     return {
       cities: store.state.cities,
     };
+  },
+  mounted() {
+    store.commit('change', 'eh fogo né');
+    console.log(store.state.test);
+    this.reset();
   },
   methods: {
     async reset() {
