@@ -143,7 +143,7 @@ $screenTime: 5s;
     justify-content: center;
     align-items: center;
 
-    background-color: $opaqueblue;
+    background-color: lighten($color: $opaqueblue, $amount: 3);
 
     .text {
       color: $white;
@@ -164,7 +164,7 @@ $screenTime: 5s;
 .bottom {
   position: relative;
   height: 45px;
-  background-color: lighten($color: $opaqueblue, $amount: 8);
+  background-color: $opaqueblue;
   margin: 0px;
 
   display: flex;
