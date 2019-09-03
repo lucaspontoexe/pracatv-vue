@@ -1,6 +1,6 @@
 <template>
   <div class="weather-item">
-    <div class="top" 
+    <div class="top"
       v-bind:class="{animated: runningAnimation}"
       v-on:animationend="onAnimationEnd($event)"
       >
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import sleep from '../timeout';
+
 export default {
   name: 'weather-item',
   props: {
@@ -39,20 +41,26 @@ export default {
     };
   },
   mounted() {
-    this.setupAnimation();
+    // this.setupAnimation();
   },
   methods: {
-    setupAnimation() {
+    async setupAnimation() {
+      if (this.index === 0) console.log('WeatherAnimationsBegan');
+
       // gambiarra: CSS não oferece um jeito de reiniciar uma animação.
       // a Web Animations API não tá resolvendo
       this.runningAnimation = false;
-      window.setTimeout(() => {
-        this.runningAnimation = true;
-      }, 5000 * this.index);
+      await sleep(5000 * this.index);
+      this.runningAnimation = true;
     },
 
     onAnimationEnd(event) {
-      console.log('done animating', event);
+      // unfill-from-right é a última animação do item
+      if (event.animationName === 'unfill-from-right') {
+        console.log('done animating', event);
+        // alt: store.cities.length
+        if (this.$parent.cities.length === this.index) this.$parent.$emit('weatherAnimationsEnded');
+      }
     },
   },
 };
