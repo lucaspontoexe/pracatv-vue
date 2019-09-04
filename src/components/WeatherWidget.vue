@@ -25,19 +25,17 @@ export default {
     };
   },
   mounted() {
-    // store.commit('change', 'eh fogo né');
-    // console.log(store.state.test);
-
     this.reset();
   },
   methods: {
     async reset() {
-      // goto next chunk
+      if (this.dammit.length === 0) this.dammit = this.chunkArray(store.state.cities, 3);
+      this.cities = this.dammit.shift();
+
       await sleep(5000);
       this.$children.forEach(child => child.setupAnimation());
     },
     chunkArray(array, itemsPerChunk) {
-      // bendito seja o stack overflow.txt
       let i; let temparray;
       const finalArray = [];
       for (i = 0; i < array.length; i += itemsPerChunk) {

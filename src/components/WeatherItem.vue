@@ -23,7 +23,6 @@
 
 <script>
 import sleep from '../timeout';
-import store from '../store';
 
 export default {
   name: 'weather-item',
@@ -56,7 +55,7 @@ export default {
       // unfill-from-right é a última animação do item
       if (event.animationName === 'unfill-from-right') {
         // Caso esse seja o último item da lista, reinicia a animação.
-        if ((store.state.cities.length - 1) === this.index) this.$emit('weatherAnimationsEnded');
+        if ((this.$parent.cities.length - 1) === this.index) this.$emit('weatherAnimationsEnded');
       }
     },
   },
@@ -178,7 +177,7 @@ $screenTime: 5s;
   }
 
   span {
-    position: absolute;
+    position: relative;
     line-height: 45px;
     color: $white;
     font-family: "Futura Light", "Century Gothic", Arial, Helvetica, sans-serif;
