@@ -1,7 +1,7 @@
 <template>
   <div class="weather-widget">
     <weather-item
-      v-for="(item, index) in this.cities"
+      v-for="(item, index) in this.currentDisplayingCities"
       @weatherAnimationsEnded="reset"
       v-bind:key="index"
       v-bind="item"
@@ -20,8 +20,8 @@ export default {
   components: { WeatherItem },
   data() {
     return {
-      dammit: this.chunkArray(store.state.cities, 3),
-      cities: store.state.cities,
+      chunkedCities: this.chunkArray(store.state.cities, 3),
+      currentDisplayingcities: store.state.cities,
     };
   },
   mounted() {
@@ -29,8 +29,10 @@ export default {
   },
   methods: {
     async reset() {
-      if (this.dammit.length === 0) this.dammit = this.chunkArray(store.state.cities, 3);
-      this.cities = this.dammit.shift();
+      if (this.chunkedCities.length === 0) {
+        this.chunkedCities = this.chunkArray(store.state.cities, 3);
+      }
+      this.currentDisplayingCities = this.chunkedCities.shift();
 
       await sleep(5000);
       this.$children.forEach(child => child.setupAnimation());
