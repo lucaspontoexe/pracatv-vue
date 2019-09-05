@@ -26,7 +26,7 @@ Um clone do gerador de caracteres (GC) utilizado nos telejornais regionais da TV
 ## Controle via Websocket
 Por enquanto, o único jeito de interagir é enviando strings JSON pelo socket.
 
-*qualquer coisa, é só baixar a extensão, rodar o projeto, pegar esse bloco de código, colar na caixa de texto da janela e ver o que acontece*
+*qualquer coisa, é só baixar a extensão, rodar o projeto, pegar um desses blocos de código, colar na caixa de texto da janela e ver o que acontece*
 
 ### Atualizar título e descrição
 
