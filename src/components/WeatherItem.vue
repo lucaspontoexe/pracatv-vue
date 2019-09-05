@@ -23,6 +23,7 @@
 
 <script>
 import sleep from '../timeout';
+import EventBus from '../EventBus';
 
 export default {
   name: 'weather-item',
@@ -42,7 +43,7 @@ export default {
   },
   methods: {
     async setupAnimation() {
-      if (this.index === 0) this.$emit('WeatherAnimationsBegan');
+      if (this.index === 0) EventBus.$emit('WeatherAnimationsBegan');
 
       // Mudar o boolean reinicia a animação do item.
       this.runningAnimation = false;
@@ -54,7 +55,7 @@ export default {
       // unfill-from-right é a última animação do item
       if (event.animationName === 'unfill-from-right') {
         // Caso esse seja o último item da lista, o WeatherWidget recomeça as animações.
-        if ((this.$parent.currentDisplayingCities.length - 1) === this.index) this.$emit('weatherAnimationsEnded');
+        if ((this.$parent.currentDisplayingCities.length - 1) === this.index) EventBus.$emit('weatherAnimationsEnded');
       }
     },
   },

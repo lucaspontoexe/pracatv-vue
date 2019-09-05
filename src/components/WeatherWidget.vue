@@ -2,7 +2,6 @@
   <div class="weather-widget">
     <weather-item
       v-for="(item, index) in this.currentDisplayingCities"
-      @weatherAnimationsEnded="reset"
       v-bind:key="index"
       v-bind="item"
       :index="index"
@@ -13,6 +12,7 @@
 <script>
 import sleep from '../timeout';
 import store from '../store';
+import EventBus from '../EventBus';
 import WeatherItem from './WeatherItem.vue';
 
 export default {
@@ -26,6 +26,7 @@ export default {
   },
   mounted() {
     this.reset();
+    EventBus.$on('weatherAnimationsEnded', this.reset);
   },
   methods: {
     async reset() {
