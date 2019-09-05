@@ -4,9 +4,10 @@ Um clone do gerador de caracteres (GC) utilizado nos telejornais regionais da TV
 
 ![o clone em si](doc.png)
 
-see also: praça tv vanilla JS
+*veja também: [a mesma coisa, só que sem frameworks](https://github.com/lucaspontoexe/pracatv-vanilla)*
 
 ---
+
 
 ## Instalação
 - `yarn` ou `npm install`
@@ -14,7 +15,7 @@ see also: praça tv vanilla JS
 
 
 ## Uso
-- Tenha um servidor de WebSocket aberto na porta 9999 [(ou baixe esta extensão)](https://chrome.google.com/webstore/detail/websocket-server-test/pkbpddppnkjmlbgliipgmhjeialadokj)
+- Tenha um servidor de WebSocket aberto na porta 9999 [(ou baixe esta extensão para Chrome)](https://chrome.google.com/webstore/detail/websocket-server-test/pkbpddppnkjmlbgliipgmhjeialadokj)
 - Inicie com `yarn serve` ou `npm run serve`
 
 
