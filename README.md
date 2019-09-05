@@ -18,6 +18,11 @@ Um clone do gerador de caracteres (GC) utilizado nos telejornais regionais da TV
 - Tenha um servidor de WebSocket aberto na porta 9999 [(ou baixe esta extensão para Chrome)](https://chrome.google.com/webstore/detail/websocket-server-test/pkbpddppnkjmlbgliipgmhjeialadokj)
 - Inicie com `yarn serve` ou `npm run serve`
 
+### Outras opções
+- Corrigir problemas de indentação e estilo: `yarn lint` ou `npm run lint`
+- Compilar o projeto: `yarn build` ou `npm run build`
+
+---
 
 ## Controle via Websocket
 Por enquanto, o único jeito de interagir é enviando strings JSON pelo socket.
@@ -47,41 +52,9 @@ Por enquanto, o único jeito de interagir é enviando strings JSON pelo socket.
   }
 }
 ```
-
 ---
+
 
 *Q: mas logo Vue em pleno século 2019? 486% das empresas gostam de quem escreve as coisas em React!*
 
 Vue foi o framework que eu achei mais confortável pra começar, mas React não é um bicho de sete cabeças.
-
----
-
-*abaixo, algo que a CLI gerou e que pode ser bem útil (ou nem tanto)*
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
