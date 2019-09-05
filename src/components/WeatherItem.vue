@@ -55,7 +55,7 @@ export default {
       // unfill-from-right é a última animação do item
       if (event.animationName === 'unfill-from-right') {
         // Caso esse seja o último item da lista, o WeatherWidget recomeça as animações.
-        if ((this.$parent.currentDisplayingCities.length - 1) === this.index) EventBus.$emit('weatherAnimationsEnded');
+        if ((this.$parent.currentDisplayingCities.length - 1) === this.index) EventBus.$emit('WeatherAnimationsEnded');
       }
     },
   },
@@ -179,6 +179,7 @@ $screenTime: 5s;
   span {
     position: relative;
     line-height: 45px;
+    font-size: 30px;
     color: $white;
     font-family: "Futura Light", "Century Gothic", Arial, Helvetica, sans-serif;
 

@@ -26,7 +26,7 @@ export default {
   },
   mounted() {
     this.reset();
-    EventBus.$on('weatherAnimationsEnded', this.reset);
+    EventBus.$on('WeatherAnimationsEnded', this.reset);
   },
   methods: {
     async reset() {

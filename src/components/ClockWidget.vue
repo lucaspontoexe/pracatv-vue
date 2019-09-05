@@ -1,7 +1,7 @@
 <template>
   <div class="clock-widget">
-    <div class="logo"></div>
-    <div class="clock">
+    <div class="logo"  v-bind:class="{translated: translateClock}"></div>
+    <div class="clock" v-bind:class="{translated: translateClock}">
       <span>{{ time }}</span>
     </div>
   </div>
@@ -29,20 +29,31 @@
 .clock {
   position: relative;
   height: 45px;
-  background-color: $accent;
-  text-align: center;
   margin: 0px;
-}
+  background-color: $accent;
 
-span {
-  line-height: 45px;
-  font-size: 30px;
-  color: $white;
-  font-family: "Futura Heavy", "Century Gothic", Arial, Helvetica, sans-serif;
+  transition: height 0.5s ease-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &.translated {
+    height: 90px;
+  }
+
+  span {
+    line-height: 45px;
+    font-size: 30px;
+    color: $white;
+    font-family: "Futura Heavy", "Century Gothic", Arial, Helvetica, sans-serif;
+  }
 }
 </style>
 
 <script>
+import EventBus from '../EventBus';
+
 function addZero(number) {
   return number < 10 ? `0${number}` : number;
 }
@@ -57,6 +68,7 @@ export default {
   data() {
     return {
       time: '12:34',
+      translateClock: false,
     };
   },
 
@@ -64,6 +76,9 @@ export default {
     setInterval(() => {
       this.time = getTime();
     }, 1000);
+
+    EventBus.$on('WeatherAnimationsBegan', () => { this.translateClock = true; });
+    EventBus.$on('WeatherAnimationsEnded', () => { this.translateClock = false; });
   },
 };
 </script>
