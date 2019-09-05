@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <clock-widget />
+    <weather-widget />
     <overlay :something="overlaydata" />
   </div>
 </template>
@@ -21,7 +22,7 @@
 <script>
 import ClockWidget from './components/ClockWidget.vue';
 import Overlay from './components/Overlay.vue';
-
+import WeatherWidget from './components/WeatherWidget.vue';
 
 function setAccentColor(color) {
   const colorList = {
@@ -40,6 +41,7 @@ export default {
   components: {
     ClockWidget,
     Overlay,
+    WeatherWidget,
   },
   data() {
     return {
