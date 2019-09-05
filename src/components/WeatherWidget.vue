@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       chunkedCities: this.chunkArray(store.state.cities, 3),
-      currentDisplayingcities: store.state.cities,
+      currentDisplayingCities: store.state.cities,
     };
   },
   mounted() {
