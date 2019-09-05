@@ -11,7 +11,6 @@ Um clone do gerador de caracteres (GC) utilizado nos telejornais regionais da TV
 
 ## Instalação
 - `yarn` ou `npm install`
-- git submodule init (ou algo assim)
 
 
 ## Uso
