@@ -44,8 +44,7 @@ export default {
     async setupAnimation() {
       if (this.index === 0) this.$emit('WeatherAnimationsBegan');
 
-      // gambiarra: CSS não oferece um jeito de reiniciar uma animação.
-      // a Web Animations API não tá ajudando
+      // Mudar o boolean reinicia a animação do item.
       this.runningAnimation = false;
       await sleep(5000 * this.index);
       this.runningAnimation = true;
@@ -54,7 +53,7 @@ export default {
     onAnimationEnd(event) {
       // unfill-from-right é a última animação do item
       if (event.animationName === 'unfill-from-right') {
-        // Caso esse seja o último item da lista, reinicia a animação.
+        // Caso esse seja o último item da lista, o WeatherWidget recomeça as animações.
         if ((this.$parent.cities.length - 1) === this.index) this.$emit('weatherAnimationsEnded');
       }
     },

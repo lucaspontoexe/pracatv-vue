@@ -29,6 +29,8 @@ export default {
   },
   methods: {
     async reset() {
+      // Seleciona uma parte da array "picotada" pra passar a animação
+      // ou recomeça quando tudo já tiver sido apresentado.
       if (this.chunkedCities.length === 0) {
         this.chunkedCities = this.chunkArray(store.state.cities, 3);
       }
@@ -38,11 +40,11 @@ export default {
       this.$children.forEach(child => child.setupAnimation());
     },
     chunkArray(array, itemsPerChunk) {
-      let i; let temparray;
+      let i; let tempArray;
       const finalArray = [];
       for (i = 0; i < array.length; i += itemsPerChunk) {
-        temparray = array.slice(i, i + itemsPerChunk);
-        finalArray.push(temparray);
+        tempArray = array.slice(i, i + itemsPerChunk);
+        finalArray.push(tempArray);
       }
       return finalArray;
     },
