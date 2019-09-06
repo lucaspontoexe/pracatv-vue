@@ -78,7 +78,7 @@ export default {
     }, 1000);
 
     EventBus.$on('WeatherAnimationsBegan', () => { this.translateClock = true; });
-    EventBus.$on('WeatherAnimationsEnded', () => { this.translateClock = false; });
+    EventBus.$on('WeatherAnimationsEnding', () => { this.translateClock = false; });
   },
 };
 </script>

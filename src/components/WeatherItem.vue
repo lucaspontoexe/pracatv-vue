@@ -15,7 +15,10 @@
         <span class="text" v-bind:class="{animated: runningAnimation}">{{ temperature }}°</span>
       </div>
     </div>
-    <div class="bottom" v-bind:class="{animated: runningAnimation}">
+    <div class="bottom"
+      v-bind:class="{animated: runningAnimation}"
+      v-on:animationstart="onAnimationEnding($event)"
+      >
       <span v-bind:class="{animated: runningAnimation}">{{ name }}</span>
     </div>
   </div>
@@ -51,6 +54,15 @@ export default {
       this.runningAnimation = true;
     },
 
+    onAnimationEnding(event) {
+      // começo do fim da animação.
+      // sugestão: colocar o tempo da animação como um sleep() e disparar o 'ended'
+      // o problema é que, se precisar mudar o tempo da animação, tem que mudar aqui também.
+      if (event.animationName === 'unfill-from-right') {
+        if ((this.$parent.currentDisplayingCities.length - 1) === this.index) EventBus.$emit('WeatherAnimationsEnding');
+      }
+    },
+
     onAnimationEnd(event) {
       // unfill-from-right é a última animação do item
       if (event.animationName === 'unfill-from-right') {
@@ -58,6 +70,8 @@ export default {
         if ((this.$parent.currentDisplayingCities.length - 1) === this.index) EventBus.$emit('WeatherAnimationsEnded');
       }
     },
+
+
   },
 };
 </script>
