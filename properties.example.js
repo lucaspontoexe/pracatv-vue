@@ -16,8 +16,9 @@ use os parâmetros name (opcional) e woeid
 */
 
 export default {
+  apiKey: 'YOUR_API_KEY_HERE',
   cityList: [
-    // cidades reais
+    // dados reais
     {
       name: 'São Paulo',
       woeid: 3448439,
@@ -30,7 +31,7 @@ export default {
       name: 'São Vicente',
       woeid: 3448136,
     },
-    // cidades fictícias
+    // dados fictícios
     {
       name: 'Qualquer Cidade',
       temperature: 20,
@@ -62,5 +63,4 @@ export default {
       icon: '04d',
     },
   ],
-  apiKey: 'YOUR_API_KEY_HERE',
 };
