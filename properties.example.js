@@ -16,7 +16,6 @@ use os parâmetros name (opcional) e woeid
 */
 
 export default {
-  apiKey: 'YOUR_API_KEY_HERE',
   cityList: [
     // cidades reais
     {
@@ -63,4 +62,5 @@ export default {
       icon: '04d',
     },
   ],
+  apiKey: 'YOUR_API_KEY_HERE',
 };
