@@ -23,14 +23,11 @@ export default {
       name: 'São Paulo',
       woeid: 3448439,
     },
-    {
-      name: 'Santos',
-      woeid: 3449433,
-    },
-    {
-      name: 'São Vicente',
-      woeid: 3448136,
-    },
+
+    // o parâmetro name é opcional
+    { woeid: 3451190 },
+    { woeid: 3470127 },
+
     // dados fictícios
     {
       name: 'Qualquer Cidade',

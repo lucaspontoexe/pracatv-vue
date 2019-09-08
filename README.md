@@ -2,7 +2,7 @@
 
 Um clone do gerador de caracteres (GC) utilizado nos telejornais regionais da TV Globo (& afiliadas), implementado com Vue.
 
-![o clone em si](doc.png)
+![o clone em si](demo.gif)
 
 *veja também: [a mesma coisa, só que sem frameworks](https://github.com/lucaspontoexe/pracatv-vanilla)*
 

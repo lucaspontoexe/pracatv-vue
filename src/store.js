@@ -25,7 +25,7 @@ export default new Vuex.Store({
 
         // grab name from API if not specified
         // TODO: use local storage
-        candidate.name = candidate.name || element.main.name;
+        candidate.name = candidate.name || element.name;
         candidate.temperature = Math.round(element.main.temp);
         candidate.icon = element.weather[0].icon;
       });
