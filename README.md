@@ -51,6 +51,13 @@ Por enquanto, o único jeito de interagir é enviando strings JSON pelo socket.
   }
 }
 ```
+
+## TODO: Widget do Clima
+apresenta nome da cidade, temperatura e ícone representando a condição climática.
+Os dados são carregados de uma API, mas caso não tenha a chave de acesso [dá pra criar de graça, missing docs], pode-se usar dados fictícios.
+(foto opcional)
+*TODO: como configurar o acesso à API, criação da conta e chave, etc.*
+
 ---
 
 
