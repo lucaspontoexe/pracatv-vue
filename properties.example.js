@@ -1,17 +1,15 @@
 /*
 
-.env Pirata(TM)
-
 Instruções:
 
-- apague '.example' do nome do arquivo
+- Apague '.example' do nome do arquivo
 
-- insira a chave da API
+- Insira a chave da API
 
 - Caso você queira usar cidades reais (e localizar na API),
-use os parâmetros name (opcional) e woeid
+use os parâmetros 'name' (opcional) e 'woeid'
 
-- Para usar dados fictícios, use name, temperature e icon.
+- Para usar dados fictícios, use 'name', 'temperature' e 'icon'.
 
 */
 
@@ -24,7 +22,7 @@ export default {
       woeid: 3448439,
     },
 
-    // o parâmetro name é opcional
+    // o parâmetro 'name' é opcional
     { woeid: 3451190 },
     { woeid: 3470127 },
 

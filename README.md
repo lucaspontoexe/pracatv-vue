@@ -52,14 +52,21 @@ Por enquanto, o único jeito de interagir é enviando strings JSON pelo socket.
 }
 ```
 
-## TODO: Widget do Clima
+## Widget do Clima
 apresenta nome da cidade, temperatura e ícone representando a condição climática.
 Os dados são carregados de uma API, mas caso não tenha a chave de acesso [dá pra criar de graça, missing docs], pode-se usar dados fictícios.
-(foto opcional)
+
+
+
 *TODO: como configurar o acesso à API, criação da conta e chave, etc.*
 
----
+- cria la conta na openweathermap.org
+- você recebe a chave por email. a ativação leva algumas horas
+- enquanto não ativa, pesquise [nesse site](https://openweathermap.org/find) cada cidade que você queira incluir
+- o WOEID está no endereço da página (sdds print screen)
+- segue as instruções do `properties.example.js`
 
+---
 
 *Q: mas logo Vue em pleno século 2019? 486% das empresas gostam de quem escreve as coisas em React!*
 
