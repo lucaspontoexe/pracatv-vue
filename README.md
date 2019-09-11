@@ -53,21 +53,22 @@ Por enquanto, o único jeito de interagir é enviando strings JSON pelo socket.
 ```
 
 ## Widget do Clima
-apresenta nome da cidade, temperatura e ícone representando a condição climática.
-Os dados são carregados de uma API, mas caso não tenha a chave de acesso [dá pra criar de graça, missing docs], pode-se usar dados fictícios.
+Apresenta o nome da cidade, temperatura e um ícone representando sua condição climática.
+Os dados são carregados de uma API, mas caso você não queira criar uma chave de acesso, pode-se usar dados fictícios.
 
+### Configuração
 
+1. Crie uma conta em [openweathermap.org](https://openweathermap.org)
+2. Você receberá sua chave por email. A ativação leva algumas horas.
+3. Enquanto isso, pesquise [nesse endereço](https://openweathermap.org/find) cada cidade que você queira incluir
+4. o WOEID está no endereço da página
+![o código fica no campo do endereço da página](woeid-image.png)
+5. Siga as instruções do arquivo `properties.example.js`
 
-*TODO: como configurar o acesso à API, criação da conta e chave, etc.*
-
-- cria la conta na openweathermap.org
-- você recebe a chave por email. a ativação leva algumas horas
-- enquanto não ativa, pesquise [nesse site](https://openweathermap.org/find) cada cidade que você queira incluir
-- o WOEID está no endereço da página (sdds print screen)
-- segue as instruções do `properties.example.js`
+*to do: detalhar como configurar o widget sem precisar da api*
 
 ---
 
-*Q: mas logo Vue em pleno século 2019? 486% das empresas gostam de quem escreve as coisas em React!*
+*Q: mas logo Vue em pleno século 2019? 11 em cada 10 empresas recomendam quem usa React™!*
 
 Vue foi o framework que eu achei mais confortável pra começar, mas React não é um bicho de sete cabeças.
