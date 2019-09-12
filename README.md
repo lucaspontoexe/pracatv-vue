@@ -70,10 +70,10 @@ Os dados são carregados de uma API, mas caso você não queira criar uma chave 
 5. Siga as instruções do arquivo `properties.example.js`
 
 
-**Usando dados fictícios**
+**Usando apenas dados fictícios**
 
 1. Abra o `properties.example.js`
-2. Defina `use_api` como `false`
+2. Defina `useApi` como `false`
 3. Insira os parâmetros `name`, `temperature` e `icon` em todos os itens
 
 ---
