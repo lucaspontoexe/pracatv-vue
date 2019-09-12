@@ -164,7 +164,6 @@ $screenTime: 5s;
       font-size: 54px;
     }
   }
-  // TODO: change .icon to the actual icon (img tag)
   .icon > img,
   .text {
     &.animated {

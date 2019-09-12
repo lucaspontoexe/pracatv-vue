@@ -25,7 +25,6 @@ export default new Vuex.Store({
         const candidate = state.cities.find(item => item.woeid === element.id);
 
         // grab name from API if not specified
-        // TODO: use local storage
         candidate.name = candidate.name || element.name;
         candidate.temperature = Math.round(element.main.temp);
         candidate.icon = element.weather[0].icon;
