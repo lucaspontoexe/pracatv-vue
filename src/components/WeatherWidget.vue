@@ -24,7 +24,9 @@ export default {
       currentDisplayingCities: store.state.cities,
     };
   },
-  mounted() {
+  async mounted() {
+    if (store.state.useApi) await store.dispatch('getListFromApi');
+
     this.reset();
     EventBus.$on('WeatherAnimationsEnded', this.reset);
   },

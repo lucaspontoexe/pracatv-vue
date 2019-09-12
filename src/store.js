@@ -1,43 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import api from './services/api';
+import properties from '../properties';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     test: 'something',
-    cities: [
-      {
-        name: 'Qualquer Cidade',
-        temperature: 20,
-        icon: '01d',
-      },
-      {
-        name: 'Tangamandápio',
-        temperature: 30,
-        icon: '02d',
-      },
-      {
-        name: 'Acapulco',
-        temperature: 15,
-        icon: '04d',
-      },
-      {
-        name: 'Quatrópolis',
-        temperature: 14,
-        icon: '03d',
-      },
-      {
-        name: 'Piracicaba',
-        temperature: 15,
-        icon: '02d',
-      },
-      {
-        name: 'Sexta',
-        temperature: 21,
-        icon: '04d',
-      },
-    ],
+    useApi: properties.useApi,
+    cities: properties.cityList,
   },
   mutations: {
     change(state, payload) {
@@ -45,10 +17,34 @@ export default new Vuex.Store({
     },
 
     updateCities(state, payload) {
-      Object.assign(state.cities, payload);
+      payload.forEach((element) => {
+        // Atualiza as cidades especificadas como parâmetro pro WeatherWidget.
+        // As cidades que estão sem o WOEID (no caso, as fictícias)
+        // continuam aparecendo. É só não esquecer de incluir o nome
+
+        const candidate = state.cities.find(item => item.woeid === element.id);
+
+        // grab name from API if not specified
+        candidate.name = candidate.name || element.name;
+        candidate.temperature = Math.round(element.main.temp);
+        candidate.icon = element.weather[0].icon;
+      });
     },
   },
   actions: {
+    async getListFromApi({ commit, state }) {
+      const idList = state.cities.filter(item => 'woeid' in item).map(obj => obj.woeid);
 
+      const response = await api.get('/group', {
+        params: {
+          id: idList.join(),
+          units: 'metric',
+          APPID: properties.apiKey,
+        },
+      });
+
+      commit('updateCities', response.data.list);
+      console.log(response);
+    },
   },
 });

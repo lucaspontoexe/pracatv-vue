@@ -2,7 +2,7 @@
 
 Um clone do gerador de caracteres (GC) utilizado nos telejornais regionais da TV Globo (& afiliadas), implementado com Vue.
 
-![o clone em si](doc.png)
+![o clone em si](demo.gif)
 
 *veja também: [a mesma coisa, só que sem frameworks](https://github.com/lucaspontoexe/pracatv-vanilla)*
 
@@ -51,9 +51,33 @@ Por enquanto, o único jeito de interagir é enviando strings JSON pelo socket.
   }
 }
 ```
+
+## Widget do Clima
+Apresenta o nome da cidade, temperatura e um ícone representando sua condição climática.
+Os dados são carregados de uma API, mas caso você não queira criar uma chave de acesso, pode-se usar dados fictícios.
+
+### Configuração
+
+**Usando dados da API**
+
+1. Crie uma conta em [openweathermap.org](https://openweathermap.org)
+2. Você receberá sua chave por email. A ativação leva algumas horas.
+3. Enquanto isso, pesquise [nesse endereço](https://openweathermap.org/find) cada cidade que você queira incluir
+4. o WOEID está no endereço da página
+
+![o código fica no campo do endereço da página](woeid-image.png)
+
+5. Siga as instruções do arquivo `properties.example.js`
+
+
+**Usando apenas dados fictícios**
+
+1. Abra o `properties.example.js`
+2. Defina `useApi` como `false`
+3. Insira os parâmetros `name`, `temperature` e `icon` em todos os itens
+
 ---
 
-
-*Q: mas logo Vue em pleno século 2019? 486% das empresas gostam de quem escreve as coisas em React!*
+*Q: mas logo Vue em pleno século 2019? 11 em cada 10 empresas recomendam quem usa React™!*
 
 Vue foi o framework que eu achei mais confortável pra começar, mas React não é um bicho de sete cabeças.
