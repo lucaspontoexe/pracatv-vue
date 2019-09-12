@@ -58,14 +58,23 @@ Os dados são carregados de uma API, mas caso você não queira criar uma chave 
 
 ### Configuração
 
+**Usando dados da API**
+
 1. Crie uma conta em [openweathermap.org](https://openweathermap.org)
 2. Você receberá sua chave por email. A ativação leva algumas horas.
 3. Enquanto isso, pesquise [nesse endereço](https://openweathermap.org/find) cada cidade que você queira incluir
 4. o WOEID está no endereço da página
+
 ![o código fica no campo do endereço da página](woeid-image.png)
+
 5. Siga as instruções do arquivo `properties.example.js`
 
-*to do: detalhar como configurar o widget sem precisar da api*
+
+**Usando dados fictícios**
+
+1. abra o `properties.example.js`
+2. defina `use_api` como `false`
+3. coloque os parâmetros `name`, `temperature` e `icon` em todos os itens
 
 ---
 

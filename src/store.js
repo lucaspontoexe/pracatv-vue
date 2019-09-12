@@ -8,6 +8,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     test: 'something',
+    useApi: properties.useApi,
     cities: properties.cityList,
   },
   mutations: {

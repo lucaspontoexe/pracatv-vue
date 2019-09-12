@@ -25,7 +25,7 @@ export default {
     };
   },
   async mounted() {
-    await store.dispatch('getListFromApi');
+    if (store.state.useApi) await store.dispatch('getListFromApi');
 
     this.reset();
     EventBus.$on('WeatherAnimationsEnded', this.reset);

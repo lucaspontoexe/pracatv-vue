@@ -14,6 +14,8 @@ use os parâmetros 'name' (opcional) e 'woeid'
 */
 
 export default {
+  // defina como 'true' para utilizar a API.
+  useApi: false,
   apiKey: 'YOUR_API_KEY_HERE',
   cityList: [
     // dados reais
