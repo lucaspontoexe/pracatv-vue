@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import api from './services/api';
-import properties from '../properties';
+// eslint-disable-next-line import/extensions
+import properties from '../properties.js';
 
 Vue.use(Vuex);
 
